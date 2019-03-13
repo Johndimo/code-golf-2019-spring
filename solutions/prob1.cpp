@@ -1,0 +1,2 @@
+#include <iostream>
+using namespace std;int hammingDistance(int x, int y){string b1;string b2;int r=0;while(x>0){b1+= to_string(x%2);x=x/2;}while(y>0){b2+=to_string(y%2);y=y/2;}if(b1.length()<b2.length()){b1=string(b2.length()-b1.length(),'0').append(b1);}else{b2=string(b1.length()-b2.length(),'0').append(b2);}int i=0;int j=b1.length()-1;while(i<b1.length()){if(b1[i]!=b2[j]){r++;}j--;i++;}return r;}int main(){cout << to_string(hammingDistance(3,16));return 0;}
